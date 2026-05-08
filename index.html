@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=40" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=41" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(14px, 2vw, 24px); padding-bottom: clamp(14px, 2vw, 24px); }
@@ -80,6 +80,10 @@
     body.home .hero-inner, .page-head .wrap { padding-top: 0 !important; padding-bottom: 0 !important; }
     /* Hide home hero button to match page-head content density */
     body.home .hero .btn { display: none !important; }
+  
+    /* Push home hero text to far left */
+    body.home .hero-inner { max-width: 56ch !important; width: auto !important; margin-left: 0 !important; margin-right: auto !important; padding-left: clamp(20px, 4vw, 56px) !important; padding-right: clamp(20px, 4vw, 56px) !important; text-align: left !important; }
+    body.home .hero-inner > * { margin-left: 0 !important; }
   </style>
 </head>
 <body class="home">
