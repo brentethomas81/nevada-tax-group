@@ -9,46 +9,41 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=23" />
   <style>
-      /* Compact engagement CTA + footer (all pages) */
-      .section-navy { padding-top: clamp(28px, 3.5vw, 48px); padding-bottom: clamp(28px, 3.5vw, 48px); }
-      .section-navy .eyebrow { margin-bottom: 8px; }
-      .section-navy h2 { font-size: clamp(1.45rem, 2vw, 1.9rem); margin: 0 auto 10px !important; }
-      .section-navy .lede { font-size: 0.95rem; line-height: 1.5; margin: 0 auto 20px !important; }
-      .site-footer { padding-top: clamp(28px, 3.5vw, 44px); padding-bottom: clamp(18px, 2.5vw, 28px); }
-      .site-footer .footer-grid { gap: 24px; margin-bottom: 24px; }
-      .site-footer h5 { font-size: 0.78rem; margin-bottom: 8px; }
-      .site-footer ul li, .site-footer .footer-brand p { font-size: 0.82rem; line-height: 1.5; }
-      .site-footer .compliance { padding-top: 18px; }
-      .site-footer .compliance p { font-size: 0.6rem; line-height: 1.5; margin-bottom: 6px; }
-      .site-footer .compliance-bottom { font-size: 0.62rem; padding-top: 10px; }
-      @media (max-width: 820px) { .site-footer .compliance p { font-size: 0.56rem; } }
-      /* Home: pull hero eyebrow up */
-      body.home .hero-inner { padding-top: clamp(48px, 7vw, 96px) !important; padding-bottom: clamp(40px, 6vw, 80px); }
-      /* Navy overlay on page-head image */
-      .page-head { position: relative; overflow: hidden; padding-top: clamp(40px, 5vw, 76px); padding-bottom: clamp(32px, 4vw, 60px); }
-      .page-head-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
-      .page-head-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.62), rgba(15,28,55,.85)); pointer-events: none; }
-      .page-head .wrap { position: relative; z-index: 2; }
-      .page-head .eyebrow { color: var(--gold); }
-      .page-head h1 { color: #fff; }
-      .page-head .lede { color: rgba(255,255,255,.86); }
-      /* Tighter section + practice rows */
-      .section { padding: clamp(28px, 4vw, 60px) 0; }
-      .practice-row { padding: clamp(20px, 3vw, 40px) 0; gap: clamp(18px, 2.5vw, 36px); }
-      .practice-row ul li:last-child { border-bottom: 0; }
-      /* Home-only: 4-up audience grid */
-      body.home .audience { grid-template-columns: repeat(4, 1fr); }
-      body.home .audience > a { padding: 44px 28px; }
-      body.home .audience h3 { font-size: 1.2rem; }
-      body.home .audience p { font-size: 0.9rem; }
-      @media (max-width: 1100px) { body.home .audience { grid-template-columns: repeat(2, 1fr); } body.home .audience > a { border-right: 0 !important; } body.home .audience > a:nth-child(odd) { border-right: 1px solid var(--rule) !important; } body.home .audience > a:nth-child(-n+2) { border-bottom: 1px solid var(--rule); } }
-      @media (max-width: 700px) { body.home .audience { grid-template-columns: 1fr; } body.home .audience > a { border-right: 0 !important; border-bottom: 1px solid var(--rule); } }
-      /* Team teaser clickable card */
-      .team-grid a.attorney-link { text-decoration: none; color: inherit; display: block; transition: opacity .2s ease; }
-      .team-grid a.attorney-link:hover { opacity: .85; }
-    </style>
+    /* Compact engagement CTA + footer (applies to all pages) */
+    .section-navy { padding-top: clamp(14px, 2vw, 24px); padding-bottom: clamp(14px, 2vw, 24px); }
+    .section-navy .eyebrow { margin-bottom: 4px; font-size: 0.7rem; }
+    .section-navy h2 { font-size: clamp(1.05rem, 1.55vw, 1.4rem); margin: 0 auto 5px !important; line-height: 1.25; }
+    .section-navy .lede { font-size: 0.8rem; line-height: 1.4; margin: 0 auto 12px !important; }
+    .section-navy .btn { padding: 8px 20px; font-size: 0.72rem; letter-spacing: 0.18em; }
+    .site-footer { padding-top: clamp(28px, 3.5vw, 44px); padding-bottom: clamp(18px, 2.5vw, 28px); }
+    .site-footer .footer-grid { gap: 24px; margin-bottom: 24px; }
+    .site-footer h5 { font-size: 0.78rem; margin-bottom: 8px; }
+    .site-footer ul li,
+    .site-footer .footer-brand p { font-size: 0.82rem; line-height: 1.5; }
+    .site-footer .compliance { padding-top: 18px; }
+    .site-footer .compliance p { font-size: 0.6rem; line-height: 1.5; margin-bottom: 6px; }
+    .site-footer .compliance-bottom { font-size: 0.62rem; padding-top: 10px; }
+    @media (max-width: 820px) {
+      .site-footer .compliance p { font-size: 0.56rem; }
+    }
+    /* Home-only: 4-up audience grid */
+    body.home .audience { grid-template-columns: repeat(4, 1fr); }
+    body.home .audience > a { padding: 44px 28px; }
+    body.home .audience h3 { font-size: 1.2rem; }
+    body.home .audience p { font-size: 0.9rem; }
+    @media (max-width: 1100px) {
+      body.home .audience { grid-template-columns: repeat(2, 1fr); }
+      body.home .audience > a { border-right: 0 !important; }
+      body.home .audience > a:nth-child(odd) { border-right: 1px solid var(--rule) !important; }
+      body.home .audience > a:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    }
+    @media (max-width: 700px) {
+      body.home .audience { grid-template-columns: 1fr; }
+      body.home .audience > a { border-right: 0 !important; border-bottom: 1px solid var(--rule); }
+    }
+  </style>
 </head>
 <body>
 
