@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=49" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=50" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(14px, 2vw, 24px); padding-bottom: clamp(14px, 2vw, 24px); }
@@ -92,6 +92,16 @@
   
     /* About-page sections pushed left */
     body section:not(.section-navy) > .wrap, body section:not(.section-navy) > .wrap-narrow { margin-left: 0 !important; padding-left: clamp(12px, 2vw, 32px) !important; padding-right: clamp(12px, 2vw, 32px) !important; max-width: 80ch !important; }
+  
+    /* About: flatten By referral and center Independence */
+    body section.section-cream > .wrap > div[style*="grid"] { display: block !important; grid-template-columns: none !important; }
+    body section.section-cream > .wrap > div[style*="grid"] > div { width: 100% !important; }
+    /* Center & tighten Independence section */
+    body section:not(.page-head):not(.section-navy):not(.section-cream) > .wrap > div[style*="grid"] { display: block !important; grid-template-columns: none !important; text-align: center; }
+    body section:not(.page-head):not(.section-navy):not(.section-cream) > .wrap > div[style*="grid"] > div { width: 100% !important; text-align: center; }
+    body section:not(.page-head):not(.section-navy):not(.section-cream) > .wrap > div[style*="grid"] > div > * { margin-left: auto !important; margin-right: auto !important; }
+    body section:not(.page-head):not(.section-navy):not(.section-cream) > .wrap > div h2 { margin-bottom: 8px !important; }
+    body section:not(.page-head):not(.section-navy):not(.section-cream) > .wrap > div h2 + p { margin-top: 0 !important; padding-top: 0 !important; }
   </style>
 </head>
 <body class="home">
