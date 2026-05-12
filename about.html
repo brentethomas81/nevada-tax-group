@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=79" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=81" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -136,6 +136,18 @@
     .section:not(.section-navy) { padding-top: clamp(22px, 2.8vw, 38px) !important; padding-bottom: clamp(22px, 2.8vw, 38px) !important; }
     .section:not(.section-navy) .wrap-narrow p { margin-bottom: 12px !important; }
     .section:not(.section-navy) .wrap-narrow h2 { margin-bottom: 12px !important; }
+    /* About: side-by-side split for Referral / Independence */
+    .split-section { padding: 0 !important; }
+    .split-section .split-grid { display: grid; grid-template-columns: 1fr 1px 1fr; min-height: clamp(300px, 30vw, 480px); max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+    .split-section .split-col { padding: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 48px); }
+    .split-section .split-col.left { background: var(--cream); }
+    .split-section .split-col.right { background: #EEF2F6; }
+    .split-section .split-divider { background: var(--gold); }
+    .split-section h2 { margin-bottom: 16px !important; }
+    .split-section p { margin-bottom: 12px !important; }
+    @media (max-width: 820px) {
+      .split-section .split-grid { grid-template-columns: 1fr !important; grid-template-rows: auto 1px auto !important; }
+    }
   </style>
 </head>
 <body class="home">
@@ -195,28 +207,22 @@
     </div>
   </section>
 
-  <section class="section section-cream">
-    <div class="wrap">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px); align-items: start;">
-        <div>
-          <span class="eyebrow">How We Work</span>
-          <h2>By referral, by design.</h2>
-        </div>
-        <div>
-          <p>The firm does not solicit business directly and does not maintain a marketing function. New engagements arrive through three channels: referrals from professional firms with whom we have an existing working relationship; introductions from prior clients; and inbound inquiries from advisors who have a specific client situation in mind.</p>
-          <p>We decline more engagements than we accept. The reasons are straightforward: the work is technical and time-intensive, and we hold our active matters at any given time to an intentional limit. We are also disciplined about fit — there are situations where another firm is genuinely a better choice, and we say so.</p>
-          <p>Each engagement we accept is governed by a written engagement letter that defines the scope and basis of the work. The firm's compensation is set at the outset and is in no part contingent on the outcome of any transaction or the implementation of any product.</p>
-        </div>
+  <section class="section split-section">
+    <div class="split-grid">
+      <div class="split-col left">
+        <span class="eyebrow">How We Work</span>
+        <h2>By referral, by design.</h2>
+        <p>The firm does not solicit business directly and does not maintain a marketing function. New engagements arrive through three channels: referrals from professional firms with whom we have an existing working relationship; introductions from prior clients; and inbound inquiries from advisors who have a specific client situation in mind.</p>
+        <p>We decline more engagements than we accept. The reasons are straightforward: the work is technical and time-intensive, and we hold our active matters at any given time to an intentional limit. We are also disciplined about fit — there are situations where another firm is genuinely a better choice, and we say so.</p>
+        <p>Each engagement we accept is governed by a written engagement letter that defines the scope and basis of the work. The firm's compensation is set at the outset and is in no part contingent on the outcome of any transaction or the implementation of any product.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="independence" style="padding-top: clamp(8px, 1.5vw, 20px);" class="section">
-    <div class="wrap-narrow">
-      <span class="eyebrow">Independence</span>
-      <h2 style="color:#FFF;">We sell counsel, not products.</h2>
-      <p>The firm does not maintain affiliations with broker-dealers, insurance companies, registered investment advisors, or any organization whose compensation depends on a client implementing a particular financial product. Our engagement letters are explicit on this point, and we are happy to address the question directly with prospective clients or their advisors.</p>
-      <p>When a particular planning approach involves a product — a trust, an entity, an insurance contract, a charitable vehicle — we identify the providers our clients have available, document the considerations on either side, and let the client and their primary advisors make the implementation decision with full information. The firm does not receive compensation in connection with that selection.</p>
+      <div class="split-divider"></div>
+      <div class="split-col right">
+        <span class="eyebrow">Independence</span>
+        <h2>We sell counsel, not products.</h2>
+        <p>The firm does not maintain affiliations with broker-dealers, insurance companies, registered investment advisors, or any organization whose compensation depends on a client implementing a particular financial product. Our engagement letters are explicit on this point, and we are happy to address the question directly with prospective clients or their advisors.</p>
+        <p>When a particular planning approach involves a product — a trust, an entity, an insurance contract, a charitable vehicle — we identify the providers our clients have available, document the considerations on either side, and let the client and their primary advisors make the implementation decision with full information. The firm does not receive compensation in connection with that selection.</p>
+      </div>
     </div>
   </section>
 
