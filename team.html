@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=73" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=74" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -29,14 +29,14 @@
       /* Standardize page-head photo: navy overlay, gold eyebrow, white text */
       .page-head { position: relative; overflow: hidden; padding-top: clamp(40px, 5vw, 76px); padding-bottom: clamp(32px, 4vw, 60px); }
       .page-head-image { position: absolute; inset: 0; background-size: cover; background-position: center; }
-      .page-head-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.35), rgba(15,28,55,.55)); pointer-events: none; }
+      .page-head-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.45), rgba(15,28,55,.45)); pointer-events: none; }
       .page-head .wrap { position: relative; z-index: 2; }
       .page-head .eyebrow { color: var(--gold) !important; }
       .page-head h1 { color: #fff !important; }
       .page-head .lede { color: rgba(255,255,255,.86) !important; }
       /* Insights articles: apply the same navy overlay to .feature-image */
       .feature-image { position: relative; }
-      .feature-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.35), rgba(15,28,55,.55)); pointer-events: none; }
+      .feature-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.45), rgba(15,28,55,.45)); pointer-events: none; }
       /* Tighter section + practice rows */
       .section { padding: clamp(28px, 4vw, 60px) 0; }
       .practice-row { padding: clamp(20px, 3vw, 40px) 0; gap: clamp(18px, 2.5vw, 36px); }
@@ -72,7 +72,7 @@
       /* Home hero shrunk to match page-head height */
       body.home .hero { min-height: 0 !important; height: auto !important; padding: 0 !important; position: relative; overflow: hidden; }
       body.home .hero-image { position: absolute !important; inset: 0; background-size: cover; background-position: center; }
-      body.home .hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.35), rgba(15,28,55,.55)); pointer-events: none; }
+      body.home .hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,28,55,.45), rgba(15,28,55,.45)); pointer-events: none; }
       body.home .hero-inner { position: relative; z-index: 2; padding-top: clamp(40px, 5vw, 76px) !important; padding-bottom: clamp(32px, 4vw, 60px) !important; }
     
     /* Lock hero + page-head to identical fixed heights */
@@ -90,7 +90,7 @@
     .page-head .lede { font-size: clamp(1rem, 1.7vw, 1.33rem) !important; line-height: 1.4 !important; }
     .page-head .eyebrow { font-size: 0.83rem !important; margin-bottom: 12px !important; }
     .page-head-image { background-size: contain !important; background-position: center center !important; background-repeat: no-repeat !important; }
-    .page-head-image::after { background: linear-gradient(180deg, rgba(15,28,55,.35), rgba(15,28,55,.55)) !important; }
+    .page-head-image::after { background: linear-gradient(180deg, rgba(15,28,55,.45), rgba(15,28,55,.45)) !important; }
   
     /* Unify page-head + home hero text colors (dark text on light overlay) */
     body.home .hero .eyebrow, .page-head .eyebrow { color: var(--gold) !important; }
