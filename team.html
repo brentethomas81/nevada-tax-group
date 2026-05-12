@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=76" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=77" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -103,6 +103,13 @@
     /* Match home hero substrate: navy bg + 0.35 photo opacity */
     .page-head { background: var(--navy) !important; }
     .page-head-image { opacity: 0.35 !important; }
+    /* Footer: widen to ~1500px + compress vertical rhythm uniformly */
+    .site-footer .wrap { max-width: 1500px !important; padding-left: clamp(20px, 2vw, 36px) !important; padding-right: clamp(20px, 2vw, 36px) !important; }
+    .site-footer { padding-top: clamp(20px, 2.5vw, 32px) !important; padding-bottom: clamp(12px, 1.5vw, 20px) !important; }
+    .site-footer .footer-grid { gap: 20px !important; margin-bottom: 16px !important; }
+    .site-footer .compliance { padding-top: 12px !important; }
+    .site-footer .compliance p { line-height: 1.45 !important; margin-bottom: 4px !important; }
+    .site-footer .compliance-bottom { padding-top: 8px !important; }
   </style>
 </head>
 <body>
