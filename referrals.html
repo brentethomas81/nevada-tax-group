@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=61" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=68" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -89,6 +89,11 @@
     .page-head h1 { font-size: clamp(1.85rem, 4.7vw, 2.55rem) !important; line-height: 1.08 !important; margin-bottom: 16px !important; }
     .page-head .lede { font-size: clamp(1rem, 1.7vw, 1.33rem) !important; line-height: 1.4 !important; }
     .page-head .eyebrow { font-size: 0.83rem !important; margin-bottom: 12px !important; }
+  
+    /* Unify all page-head + home hero text colors */
+    body.home .hero .eyebrow, .page-head .eyebrow { color: var(--gold) !important; }
+    body.home .hero h1, .page-head h1 { color: #fff !important; }
+    body.home .hero .lede, .page-head .lede { color: rgba(255,255,255,.86) !important; }
   </style>
 </head>
 <body>
