@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=64" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=66" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -88,10 +88,10 @@
     /* Match home hero text sizes on every page-head */
     .page-head h1 { font-size: clamp(1.85rem, 4.7vw, 2.55rem) !important; line-height: 1.08 !important; margin-bottom: 16px !important; }
     .page-head .lede { font-size: clamp(1rem, 1.7vw, 1.33rem) !important; line-height: 1.4 !important; }
-    .page-head .eyebrow { font-size: 0.83rem !important; margin-bottom: 12px !important; }
-  
-    /* Team page: show top of presenter image so face/head are visible */
-    .page-head-image { background-position: center top !important; }
+    .page-head .eyebrow { font-size: 0.83rem !important; margin-bottom: 12px !important; }    /* Team page: show full presenter image, centered */
+    .page-head { background-color: #0b2545; }
+    .page-head-image { background-size: contain !important; background-position: center center !important; background-repeat: no-repeat !important; }
+    .page-head-image::after { background: linear-gradient(180deg, rgba(15,28,55,.20), rgba(15,28,55,.40)) !important; }
   </style>
 </head>
 <body>
