@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=78" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=79" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -131,6 +131,11 @@
     .section-navy .eyebrow { margin-bottom: 6px !important; }
     .section-navy h2 { max-width: 56ch !important; margin: 0 auto 8px !important; }
     .section-navy .lede { max-width: 78ch !important; margin: 0 auto 14px !important; }
+    /* Body content sections: widen wrap-narrow + compress vertical (excludes navy CTA) */
+    .section:not(.section-navy) .wrap-narrow { max-width: 1100px !important; padding-left: clamp(20px, 2vw, 36px) !important; padding-right: clamp(20px, 2vw, 36px) !important; }
+    .section:not(.section-navy) { padding-top: clamp(22px, 2.8vw, 38px) !important; padding-bottom: clamp(22px, 2.8vw, 38px) !important; }
+    .section:not(.section-navy) .wrap-narrow p { margin-bottom: 12px !important; }
+    .section:not(.section-navy) .wrap-narrow h2 { margin-bottom: 12px !important; }
   </style>
 </head>
 <body class="home">
