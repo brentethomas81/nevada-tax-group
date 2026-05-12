@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=80" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=83" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -121,6 +121,8 @@
     .section:not(.section-navy) { padding-top: clamp(22px, 2.8vw, 38px) !important; padding-bottom: clamp(22px, 2.8vw, 38px) !important; }
     .section:not(.section-navy) .wrap-narrow p { margin-bottom: 12px !important; }
     .section:not(.section-navy) .wrap-narrow h2 { margin-bottom: 12px !important; }
+    /* Tighten the gap above Your Team heading (cut ~50%) */
+    .section:has(.team-grid) { padding-top: 0 !important; }
   </style>
 </head>
 <body>
