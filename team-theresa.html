@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=88" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=89" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -170,6 +170,48 @@
 
       /* MOBILE FIX: touch targets — buttons and inline-arrow links need 44px min height for accessibility. */
       .btn, .nav-cta, .link-arrow { min-height: 44px !important; display: inline-flex !important; align-items: center !important; }
+
+      /* MOBILE FIX: team-grid — single card was filling whole screen on mobile */
+      .team-grid { max-width: 320px !important; margin-left: auto !important; margin-right: auto !important; gap: 24px !important; }
+      .team-grid .portrait { aspect-ratio: 1 / 1.15 !important; margin-bottom: 16px !important; }
+      .team-grid .attorney h3 { font-size: 1.25rem !important; }
+      .team-grid .attorney .role { font-size: 0.7rem !important; }
+      .team-grid .attorney .bio { font-size: 0.9rem !important; }
+      .team-grid .attorney .creds { font-size: 0.78rem !important; }
+      
+      /* MOBILE FIX: split-section (about) — internal padding tighter on phone */
+      .split-section .split-grid { grid-template-columns: 1fr !important; grid-template-rows: auto auto auto !important; min-height: 0 !important; }
+      .split-section .split-divider { height: 1px !important; min-height: 1px !important; width: 100% !important; }
+      .split-section .split-col { padding: 24px 20px !important; }
+      .split-section .split-col h2 { font-size: 1.2rem !important; margin-bottom: 10px !important; }
+      .split-section .split-col p { font-size: 0.88rem !important; line-height: 1.55 !important; margin-bottom: 8px !important; }
+      
+      /* MOBILE FIX: practice-row — desktop has 2-col layout (number + content); stack vertically on mobile */
+      .practice-row { display: block !important; }
+      .practice-row > div:first-child { margin-bottom: 8px !important; }
+      .practice-row .num { font-size: 1.4rem !important; opacity: 0.6 !important; }
+      
+      /* MOBILE FIX: insight-row — already stacks, but ensure title sizing is right */
+      .insight-row .meta { font-size: 0.72rem !important; opacity: 0.7 !important; }
+      .insight-row h3 a { font-size: 1.1rem !important; line-height: 1.25 !important; }
+      .insight-row p { font-size: 0.9rem !important; line-height: 1.5 !important; }
+      
+      /* MOBILE FIX: insights articles (insights-1/2/3) — feature image + article body */
+      .feature-image { height: clamp(180px, 45vw, 280px) !important; }
+      .article-meta { font-size: 0.72rem !important; flex-wrap: wrap !important; gap: 6px !important; }
+      .article-body p { font-size: 0.95rem !important; line-height: 1.65 !important; margin-bottom: 14px !important; }
+      .article-body h2 { font-size: 1.2rem !important; margin-top: 26px !important; margin-bottom: 12px !important; }
+      .article-body blockquote { font-size: 0.95rem !important; padding: 14px 18px !important; margin: 16px 0 !important; }
+      .rule-gold { margin: 20px 0 !important; }
+      
+      /* MOBILE FIX: contact form on contact.html if any */
+      input, textarea, select { font-size: 16px !important; }
+      
+      /* MOBILE FIX: section-cream "Continue Reading" cards on insight pages */
+      .section-cream .grid-2 { grid-template-columns: 1fr !important; gap: 14px !important; }
+      .section-cream .card { padding: 18px 18px !important; }
+      .section-cream .card h3 a { font-size: 1.05rem !important; }
+      .section-cream .card p { font-size: 0.88rem !important; }
     }
     /* ========== END MOBILE FIXES ========== */
   </style>
