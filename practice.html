@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=79" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=84" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -119,6 +119,13 @@
     .section:not(.section-navy) { padding-top: clamp(22px, 2.8vw, 38px) !important; padding-bottom: clamp(22px, 2.8vw, 38px) !important; }
     .section:not(.section-navy) .wrap-narrow p { margin-bottom: 12px !important; }
     .section:not(.section-navy) .wrap-narrow h2 { margin-bottom: 12px !important; }
+    /* Practice page: tighten ~30% */
+    .section:has(.practice-row) { padding-top: clamp(15px, 1.9vw, 26px) !important; padding-bottom: clamp(15px, 1.9vw, 26px) !important; }
+    .practice-row { margin-bottom: clamp(18px, 2.5vw, 36px) !important; }
+    .practice-row h2 { margin-bottom: 10px !important; }
+    .practice-row p { margin-bottom: 8px !important; line-height: 1.5 !important; }
+    .practice-row ul { margin-top: 8px !important; }
+    .practice-row li { margin-bottom: 4px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
   </style>
 </head>
 <body>
@@ -158,7 +165,6 @@
           <span class="num">01</span>
         </div>
         <div>
-          <span class="eyebrow">Practice Area</span>
           <h2>Pre-Transaction Strategy</h2>
           <p>Strategic analysis for principals whose facts do not fit a standard template. Most of our work in this area is undertaken in coordination with the client's existing CPA or tax counsel, and is intended to address questions that sit at the edge of those relationships.</p>
           <p>Our role is to bring sustained, focused attention to a small number of questions — and to do so on a timeline that allows the answers to actually shape the transaction.</p>
@@ -179,7 +185,6 @@
           <span class="num">02</span>
         </div>
         <div>
-          <span class="eyebrow">Practice Area</span>
           <h2>Estate &amp; Legacy Planning</h2>
           <p>Generational planning for families whose principal asset is a closely-held interest, a recently-monetized concentrated position, or an operating enterprise that is intended to outlive its founder. The technical questions are familiar; the difficult questions are governance.</p>
           <p>We approach this work as a long, patient conversation, not a transaction. The structures matter, but the structures only function if the family understands them and the next generation is prepared to operate within them.</p>
@@ -199,7 +204,6 @@
           <span class="num">03</span>
         </div>
         <div>
-          <span class="eyebrow">Practice Area</span>
           <h2>Exit Planning</h2>
           <p>Pre-transaction analysis for founders, families, and majority owners preparing for a sale, recapitalization, or succession of a closely-held enterprise. Engagements in this area typically begin twelve to thirty-six months before a contemplated transaction and run alongside the principal's bankers, transactional counsel, and CPAs.</p>
           <p>The work is not deal advisory. The work is the planning that surrounds the deal — the questions a banker is not retained to answer and the questions transactional counsel cannot reach in the timeline of a live process.</p>
