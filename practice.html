@@ -12,8 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=94" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=95" />
   <style>
+    /* Practice toggle hidden on desktop — full content shown */
+    .practice-toggle { display: none; }
     /* Drawer infrastructure — hidden by default on desktop */
     .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
       /* Compact engagement CTA + footer (all pages) */
@@ -271,6 +273,20 @@
       body.drawer-open .mobile-drawer-backdrop { opacity: 1 !important; pointer-events: auto !important; }
       /* DRAWER CTA: bigger touch target + prominent gold button */
       .mobile-drawer-nav a.cta { display: inline-block !important; background: var(--gold) !important; color: var(--navy) !important; padding: 14px 22px !important; font-size: 0.85rem !important; font-weight: 600 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; border-radius: 2px !important; text-align: center !important; margin-top: 28px !important; align-self: stretch !important; min-height: 48px !important; }
+      /* PRACTICE MOBILE: accordion — show first paragraph, hide rest until expanded */
+      .practice-row > div:nth-child(2) > p:nth-of-type(n+2) { display: none !important; }
+      .practice-row > div:nth-child(2) > ul { display: none !important; }
+      .practice-row.expanded > div:nth-child(2) > p { display: block !important; }
+      .practice-row.expanded > div:nth-child(2) > ul { display: block !important; }
+      .practice-toggle { display: inline-flex !important; align-items: center !important; gap: 6px !important; background: transparent !important; border: 0 !important; color: var(--gold) !important; font-family: 'Inter', sans-serif !important; font-size: 0.75rem !important; font-weight: 600 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; padding: 10px 0 !important; cursor: pointer !important; margin-top: 4px !important; }
+      .practice-toggle::after { content: " ↓" !important; transition: transform 0.2s !important; display: inline-block; }
+      .practice-row.expanded .practice-toggle::after { content: " ↑" !important; }
+      /* Tighter practice typography on mobile */
+      .practice-row h2 { font-size: 1.2rem !important; margin-bottom: 8px !important; }
+      .practice-row p { font-size: 0.92rem !important; line-height: 1.55 !important; margin-bottom: 10px !important; }
+      .practice-row li { font-size: 0.88rem !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+      .practice-row .num { font-size: 1.2rem !important; }
+    
     
     
     }
