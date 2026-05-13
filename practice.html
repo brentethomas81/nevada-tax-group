@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=95" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=96" />
   <style>
     /* Practice toggle hidden on desktop — full content shown */
     .practice-toggle { display: none; }
@@ -471,5 +471,47 @@
 
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape')document.body.classList.remove('drawer-open')});</script>
 <script>window.addEventListener('scroll',function(){var h=document.querySelector('.site-header');if(h)h.classList.toggle('scrolled',window.scrollY>80)});</script>
+<script>
+(function(){
+  function initAccordion(){
+    if(window.innerWidth>768){
+      document.querySelectorAll('.practice-toggle').forEach(function(b){b.remove();});
+      document.querySelectorAll('.practice-row.expanded').forEach(function(r){r.classList.remove('expanded');});
+      return;
+    }
+    document.querySelectorAll('.practice-row').forEach(function(row){
+      if(row.querySelector('.practice-toggle'))return;
+      var contentCol;
+      var children=row.children;
+      for(var i=0;i<children.length;i++){
+        if(children[i].tagName==='DIV'&&children[i].querySelector('h2')){
+          contentCol=children[i];
+          break;
+        }
+      }
+      if(!contentCol)return;
+      var firstP=contentCol.querySelector('p');
+      if(!firstP)return;
+      var btn=document.createElement('button');
+      btn.className='practice-toggle';
+      btn.type='button';
+      btn.textContent='Read more';
+      btn.setAttribute('aria-expanded','false');
+      btn.addEventListener('click',function(){
+        var open=row.classList.toggle('expanded');
+        btn.textContent=open?'Read less':'Read more';
+        btn.setAttribute('aria-expanded',open?'true':'false');
+      });
+      firstP.insertAdjacentElement('afterend',btn);
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',initAccordion);
+  }else{
+    initAccordion();
+  }
+  window.addEventListener('resize',initAccordion);
+})();
+</script>
 </body>
 </html>
