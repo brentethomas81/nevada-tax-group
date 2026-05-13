@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=84" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=85" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -119,13 +119,18 @@
     .section:not(.section-navy) { padding-top: clamp(22px, 2.8vw, 38px) !important; padding-bottom: clamp(22px, 2.8vw, 38px) !important; }
     .section:not(.section-navy) .wrap-narrow p { margin-bottom: 12px !important; }
     .section:not(.section-navy) .wrap-narrow h2 { margin-bottom: 12px !important; }
-    /* Practice page: tighten ~30% */
-    .section:has(.practice-row) { padding-top: clamp(15px, 1.9vw, 26px) !important; padding-bottom: clamp(15px, 1.9vw, 26px) !important; }
     .practice-row { margin-bottom: clamp(18px, 2.5vw, 36px) !important; }
     .practice-row h2 { margin-bottom: 10px !important; }
     .practice-row p { margin-bottom: 8px !important; line-height: 1.5 !important; }
     .practice-row ul { margin-top: 8px !important; }
     .practice-row li { margin-bottom: 4px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+    /* Practice page: tighter — headings hug previous row */
+    .section:has(.practice-row) { padding-top: clamp(8px, 1vw, 16px) !important; padding-bottom: clamp(8px, 1vw, 16px) !important; }
+    .practice-row { margin-bottom: clamp(6px, 0.8vw, 14px) !important; padding-top: clamp(6px, 0.8vw, 14px) !important; padding-bottom: clamp(6px, 0.8vw, 14px) !important; }
+    .practice-row h2 { margin-top: 0 !important; margin-bottom: 8px !important; }
+    .practice-row p { margin-bottom: 6px !important; line-height: 1.5 !important; }
+    .practice-row ul { margin-top: 6px !important; }
+    .practice-row li { margin-bottom: 2px !important; padding-top: 6px !important; padding-bottom: 6px !important; }
   </style>
 </head>
 <body>
