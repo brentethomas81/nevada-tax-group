@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=86" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=87" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -135,14 +135,16 @@
     @media (max-width: 768px) {
       /* MOBILE FIX: header nav — hide desktop links, condense brand to make room for CTA. Why crowded: 6 nav links + CTA + brand all on one row at 390px is impossible. */
       .site-header .nav { padding: 12px 16px !important; gap: 8px !important; }
-      .site-header .nav-links { display: none !important; }
+      .site-header .nav { flex-wrap: wrap !important; }
+      .site-header .nav-links { display: flex !important; flex-wrap: wrap !important; order: 3 !important; width: 100% !important; justify-content: center !important; gap: 12px !important; padding: 10px 8px 4px !important; border-top: 1px solid var(--rule) !important; margin-top: 8px !important; }
+      .site-header .nav-links a { font-size: 0.74rem !important; padding: 8px 4px !important; min-height: 32px !important; }
       .site-header .nav-cta { padding: 10px 14px !important; font-size: 0.62rem !important; letter-spacing: 0.12em !important; min-height: 44px !important; display: inline-flex !important; align-items: center !important; }
       .site-header .brand-name small { display: none !important; }
 
       /* MOBILE FIX: hero + page-head — text was full-bleed left with no side padding, h1 too large. Why crowded: clamps designed for 1440px viewport. */
       .hero-inner, .page-head .wrap { padding: 36px 20px !important; max-width: 100% !important; }
-      .hero h1, .page-head h1 { font-size: clamp(1.55rem, 7.5vw, 2rem) !important; max-width: 100% !important; line-height: 1.15 !important; margin-bottom: 14px !important; }
-      .hero .lede, .page-head .lede { font-size: 0.95rem !important; max-width: 100% !important; line-height: 1.5 !important; }
+      .hero h1, .page-head h1 { font-size: clamp(1.2rem, 5.4vw, 1.6rem) !important; max-width: 100% !important; line-height: 1.18 !important; margin-bottom: 10px !important; }
+      .hero .lede, .page-head .lede { font-size: 0.82rem !important; max-width: 100% !important; line-height: 1.45 !important; }
       .page-head, body.home .hero { min-height: clamp(260px, 60vw, 380px) !important; max-height: none !important; height: auto !important; }
 
       /* MOBILE FIX: Engagement CTA — recently compressed to 22-38px padding which strangles the section on phone. */
