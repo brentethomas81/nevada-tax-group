@@ -12,10 +12,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=98" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=99" />
   <style>
-    /* Practice toggle hidden on desktop — full content shown */
-    .practice-toggle { display: none; }
+    /* PRACTICE ACCORDION (all viewports): show first p, hide rest until expanded */
+    .practice-row > div:nth-child(2) > p:nth-of-type(n+2) { display: none !important; }
+    .practice-row > div:nth-child(2) > ul { display: none !important; }
+    .practice-row.expanded > div:nth-child(2) > p { display: block !important; }
+    .practice-row.expanded > div:nth-child(2) > ul { display: block !important; }
+    .practice-toggle { display: inline-flex !important; align-items: center !important; gap: 8px !important; background: transparent !important; border: 0 !important; color: var(--gold) !important; font-family: 'Inter', sans-serif !important; font-size: 0.78rem !important; font-weight: 600 !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; padding: 12px 0 !important; cursor: pointer !important; margin-top: 6px !important; transition: opacity 0.15s ease !important; }
+    .practice-toggle:hover { opacity: 0.7 !important; }
+    .practice-toggle::after { content: " ↓" !important; display: inline-block !important; transition: transform 0.2s !important; }
+    .practice-row.expanded .practice-toggle::after { content: " ↑" !important; }
     /* Drawer infrastructure — hidden by default on desktop */
     .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
       /* Compact engagement CTA + footer (all pages) */
