@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=82" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=86" />
   <style>
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
@@ -154,6 +154,74 @@
     .split-section .eyebrow { font-size: 0.78rem !important; margin-bottom: 10px !important; }
     .split-section .split-col { padding: clamp(22px, 3vw, 40px) clamp(20px, 2.5vw, 36px) !important; }
     .split-section .split-grid { min-height: clamp(240px, 22vw, 360px) !important; }
+    /* ========== MOBILE FIXES (≤768px) — desktop untouched ========== */
+    @media (max-width: 768px) {
+      /* MOBILE FIX: header nav — hide desktop links, condense brand to make room for CTA. Why crowded: 6 nav links + CTA + brand all on one row at 390px is impossible. */
+      .site-header .nav { padding: 12px 16px !important; gap: 8px !important; }
+      .site-header .nav-links { display: none !important; }
+      .site-header .nav-cta { padding: 10px 14px !important; font-size: 0.62rem !important; letter-spacing: 0.12em !important; min-height: 44px !important; display: inline-flex !important; align-items: center !important; }
+      .site-header .brand-name small { display: none !important; }
+
+      /* MOBILE FIX: hero + page-head — text was full-bleed left with no side padding, h1 too large. Why crowded: clamps designed for 1440px viewport. */
+      .hero-inner, .page-head .wrap { padding: 36px 20px !important; max-width: 100% !important; }
+      .hero h1, .page-head h1 { font-size: clamp(1.55rem, 7.5vw, 2rem) !important; max-width: 100% !important; line-height: 1.15 !important; margin-bottom: 14px !important; }
+      .hero .lede, .page-head .lede { font-size: 0.95rem !important; max-width: 100% !important; line-height: 1.5 !important; }
+      .page-head, body.home .hero { min-height: clamp(260px, 60vw, 380px) !important; max-height: none !important; height: auto !important; }
+
+      /* MOBILE FIX: Engagement CTA — recently compressed to 22-38px padding which strangles the section on phone. */
+      .section-navy { padding-top: clamp(36px, 8vw, 56px) !important; padding-bottom: clamp(36px, 8vw, 56px) !important; }
+      .section-navy .wrap-narrow { padding-left: 20px !important; padding-right: 20px !important; max-width: 100% !important; }
+      .section-navy h2 { font-size: clamp(1.4rem, 5.8vw, 1.7rem) !important; max-width: 100% !important; line-height: 1.18 !important; margin: 0 auto 16px !important; }
+      .section-navy .lede { font-size: 0.95rem !important; max-width: 100% !important; line-height: 1.55 !important; margin: 0 auto 24px !important; }
+      .section-navy .btn { padding: 14px 22px !important; font-size: 0.72rem !important; min-height: 44px !important; }
+
+      /* MOBILE FIX: footer — was multi-column on a 390px screen; collapse to single column with comfortable gap. */
+      .site-footer { padding-top: clamp(32px, 7vw, 48px) !important; padding-bottom: clamp(20px, 4vw, 28px) !important; }
+      .site-footer .wrap { padding-left: 20px !important; padding-right: 20px !important; max-width: 100% !important; }
+      .site-footer .footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; margin-bottom: 22px !important; }
+      .site-footer ul li, .site-footer .footer-brand p { font-size: 0.92rem !important; line-height: 1.55 !important; }
+      .site-footer h5 { font-size: 0.85rem !important; margin-bottom: 10px !important; }
+      .site-footer .compliance { padding-top: 18px !important; }
+      .site-footer .compliance p { font-size: 0.7rem !important; line-height: 1.55 !important; margin-bottom: 10px !important; }
+      .site-footer .compliance-bottom { flex-direction: column !important; gap: 4px !important; font-size: 0.7rem !important; padding-top: 12px !important; }
+
+      /* MOBILE FIX: body content sections — recent web-wide tightening squeezed mobile paragraphs together. */
+      .section:not(.section-navy) { padding-top: clamp(28px, 6vw, 44px) !important; padding-bottom: clamp(28px, 6vw, 44px) !important; }
+      .section:not(.section-navy) .wrap-narrow { max-width: 100% !important; padding-left: 20px !important; padding-right: 20px !important; }
+      .section:not(.section-navy) .wrap-narrow p { font-size: 0.95rem !important; line-height: 1.6 !important; margin-bottom: 14px !important; }
+      .section:not(.section-navy) .wrap-narrow h2 { font-size: clamp(1.4rem, 5.5vw, 1.7rem) !important; margin-bottom: 14px !important; }
+
+      /* MOBILE FIX: practice page rows — heading-hugs-row CSS made the rows feel cramped on phone. */
+      .practice-row { margin-bottom: clamp(20px, 4vw, 32px) !important; padding-top: clamp(18px, 4vw, 26px) !important; padding-bottom: clamp(18px, 4vw, 26px) !important; }
+      .practice-row h2 { font-size: clamp(1.3rem, 5vw, 1.55rem) !important; margin-top: 0 !important; margin-bottom: 12px !important; }
+      .practice-row p { font-size: 0.95rem !important; line-height: 1.6 !important; margin-bottom: 12px !important; }
+      .practice-row li { font-size: 0.92rem !important; margin-bottom: 4px !important; padding-top: 10px !important; padding-bottom: 10px !important; }
+      .practice-row .num { font-size: clamp(1.8rem, 7vw, 2.4rem) !important; }
+      .practice-row ul { margin-top: 8px !important; }
+
+      /* MOBILE FIX: audience grid (Who We Serve) — already stacks but each card needed more padding. */
+      .audience { grid-template-columns: 1fr !important; }
+      .audience > a { padding: 28px 22px !important; border-right: 0 !important; border-bottom: 1px solid var(--rule) !important; }
+      .audience h3 { font-size: 1.15rem !important; margin-bottom: 10px !important; }
+      .audience p { font-size: 0.95rem !important; line-height: 1.55 !important; }
+
+      /* MOBILE FIX: insights list rows — 3-column desktop grid is unreadable on phone. Stack vertically. */
+      .insight-row { grid-template-columns: 1fr !important; gap: 8px !important; padding: 22px 0 !important; }
+      .insight-row .meta { font-size: 0.78rem !important; }
+      .insight-row h3 { font-size: 1.15rem !important; }
+      .insight-row .read { margin-top: 8px !important; }
+
+      /* MOBILE FIX: split-section (about) — already stacks below 820px, but tighten internal padding for phone. */
+      .split-section .split-col { padding: 28px 22px !important; }
+
+      /* MOBILE FIX: article body (insights-1/2/3) — long-form reading needs comfortable size on phone. */
+      .article-body p { font-size: 1rem !important; line-height: 1.7 !important; margin-bottom: 16px !important; }
+      .article-body h2 { font-size: 1.35rem !important; margin-top: 32px !important; margin-bottom: 14px !important; }
+
+      /* MOBILE FIX: touch targets — buttons and inline-arrow links need 44px min height for accessibility. */
+      .btn, .nav-cta, .link-arrow { min-height: 44px !important; display: inline-flex !important; align-items: center !important; }
+    }
+    /* ========== END MOBILE FIXES ========== */
   </style>
 </head>
 <body class="home">
