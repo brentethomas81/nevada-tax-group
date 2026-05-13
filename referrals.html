@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=92" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=93" />
   <style>
     /* Drawer infrastructure — hidden by default on desktop */
     .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
@@ -257,6 +257,9 @@
 
       .mobile-drawer-backdrop { display: block !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; background: rgba(11,28,55,0.55) !important; z-index: 99 !important; opacity: 0 !important; pointer-events: none !important; transition: opacity 0.25s ease !important; }
       body.drawer-open .mobile-drawer-backdrop { opacity: 1 !important; pointer-events: auto !important; }
+      /* DRAWER CTA: bigger touch target + prominent gold button */
+      .mobile-drawer-nav a.cta { display: inline-block !important; background: var(--gold) !important; color: var(--navy) !important; padding: 14px 22px !important; font-size: 0.85rem !important; font-weight: 600 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; border-radius: 2px !important; text-align: center !important; margin-top: 28px !important; align-self: stretch !important; min-height: 48px !important; }
+    
     
     }
     /* ========== END MOBILE FIXES ========== */
@@ -279,7 +282,7 @@
         <a href="team.html">Team</a>
         <a href="referrals.html" class="active">Referrals</a>
       </nav>
-      <a href="contact.html" class="nav-cta">Request an Introduction</a>
+      <a href="contact.html" class="nav-cta">Request Introduction</a>
     </div>
   </header>
 
@@ -292,7 +295,7 @@
       <a href="insights.html" onclick="document.body.classList.remove('drawer-open')">Insights</a>
       <a href="team.html" onclick="document.body.classList.remove('drawer-open')">Team</a>
       <a href="referrals.html" onclick="document.body.classList.remove('drawer-open')">Referrals</a>
-      <a href="contact.html" class="cta" onclick="document.body.classList.remove('drawer-open')">Request an Introduction &rarr;</a>
+      <a href="contact.html" class="cta" onclick="document.body.classList.remove('drawer-open')">Request Introduction &rarr;</a>
     </nav>
     <div class="mobile-drawer-footer">Las Vegas &middot; By Appointment</div>
   </aside>
@@ -338,7 +341,7 @@
       <span class="eyebrow">Engagement</span>
       <h2 style="color:#FFF;">We accept new engagements only by introduction.</h2>
       <p class="lede" style="">If you are a professional advisor with a client situation, or a principal who has been referred to the firm, we welcome a brief, confidential conversation.</p>
-      <a href="contact.html" class="btn btn-ghost-light">Request an Introduction</a>
+      <a href="contact.html" class="btn btn-ghost-light">Request Introduction</a>
     </div>
   </section>
 
@@ -373,7 +376,7 @@
         <div>
           <h5>Contact</h5>
           <ul>
-            <li><a href="contact.html">Request an Introduction</a></li>
+            <li><a href="contact.html">Request Introduction</a></li>
             <li><a href="mailto:counsel@nevadataxgroup.example">counsel@nevadataxgroup.example</a></li>
             <li>Las Vegas · By Appointment</li>
           </ul>

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=92" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=93" />
   <style>
     /* Drawer infrastructure — hidden by default on desktop */
     .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
@@ -264,6 +264,17 @@
       body.home .audience h3 { font-size: 1.2rem !important; margin-bottom: 8px !important; }
       body.home .audience p { font-size: 0.9rem !important; line-height: 1.55 !important; }
       body.home .audience .link-arrow { font-size: 0.72rem !important; margin-top: 14px !important; }
+      /* DRAWER CTA: bigger touch target + prominent gold button */
+      .mobile-drawer-nav a.cta { display: inline-block !important; background: var(--gold) !important; color: var(--navy) !important; padding: 14px 22px !important; font-size: 0.85rem !important; font-weight: 600 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; border-radius: 2px !important; text-align: center !important; margin-top: 28px !important; align-self: stretch !important; min-height: 48px !important; }
+      /* HOME MOBILE: tall hero like UBS, hidden lede, large h1 */
+      body.home .hero { min-height: 75vh !important; max-height: none !important; }
+      body.home .hero .lede { display: none !important; }
+      body.home .hero h1 { font-size: clamp(1.7rem, 7.5vw, 2.4rem) !important; line-height: 1.1 !important; max-width: 100% !important; margin-bottom: 16px !important; }
+      body.home .hero .eyebrow { font-size: 0.7rem !important; margin-bottom: 14px !important; }
+      body.home .hero-inner { padding: 32px 20px 40px !important; justify-content: flex-end !important; }
+      body.home .hero .btn { padding: 14px 24px !important; font-size: 0.78rem !important; min-height: 48px !important; letter-spacing: 0.14em !important; }
+    
+    
     
     }
     /* ========== END MOBILE FIXES ========== */
@@ -286,7 +297,7 @@
         <a href="team.html">Team</a>
         <a href="referrals.html">Referrals</a>
       </nav>
-      <a href="contact.html" class="nav-cta">Request an Introduction</a>
+      <a href="contact.html" class="nav-cta">Request Introduction</a>
     </div>
   </header>
 
@@ -299,7 +310,7 @@
       <a href="insights.html" onclick="document.body.classList.remove('drawer-open')">Insights</a>
       <a href="team.html" onclick="document.body.classList.remove('drawer-open')">Team</a>
       <a href="referrals.html" onclick="document.body.classList.remove('drawer-open')">Referrals</a>
-      <a href="contact.html" class="cta" onclick="document.body.classList.remove('drawer-open')">Request an Introduction &rarr;</a>
+      <a href="contact.html" class="cta" onclick="document.body.classList.remove('drawer-open')">Request Introduction &rarr;</a>
     </nav>
     <div class="mobile-drawer-footer">Las Vegas &middot; By Appointment</div>
   </aside>
@@ -312,7 +323,7 @@
       <span class="eyebrow">By Introduction</span>
       <h1>Strategy for principals at the threshold of a defining transaction.</h1>
       <p class="lede">A specialist bench in transaction and exit planning — serving business owners, families, and the professional firms that refer them.</p>
-      <a href="contact.html" class="btn btn-ghost-light">Request an Introduction</a>
+      <a href="contact.html" class="btn btn-ghost-light">Request Introduction</a>
     </div>
   </section>
 
@@ -365,7 +376,7 @@
       <span class="eyebrow">Engagement</span>
       <h2 style="color:#FFF;">We accept new engagements only by introduction.</h2>
       <p class="lede" style="">If you are a professional advisor with a client situation, or a principal who has been referred to the firm, we welcome a brief, confidential conversation.</p>
-      <a href="contact.html" class="btn btn-ghost-light">Request an Introduction</a>
+      <a href="contact.html" class="btn btn-ghost-light">Request Introduction</a>
     </div>
   </section>
 
@@ -400,7 +411,7 @@
         <div>
           <h5>Contact</h5>
           <ul>
-            <li><a href="contact.html">Request an Introduction</a></li>
+            <li><a href="contact.html">Request Introduction</a></li>
             <li><a href="mailto:counsel@nevadataxgroup.example">counsel@nevadataxgroup.example</a></li>
             <li>Las Vegas · By Appointment</li>
           </ul>
