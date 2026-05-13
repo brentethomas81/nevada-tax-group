@@ -12,8 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=89" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=92" />
   <style>
+    /* Drawer infrastructure — hidden by default on desktop */
+    .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
       /* Compact engagement CTA + footer (all pages) */
       .section-navy { padding-top: clamp(36px, 4.5vw, 64px); padding-bottom: clamp(36px, 4.5vw, 64px); }
       .section-navy .eyebrow { margin-bottom: 14px; font-size: 0.85rem; }
@@ -265,6 +267,32 @@
       .section-cream .card { padding: 18px 18px !important; }
       .section-cream .card h3 a { font-size: 1.05rem !important; }
       .section-cream .card p { font-size: 0.88rem !important; }
+      /* MOBILE DRAWER: hide existing nav, show hamburger + slide-in drawer */
+      .site-header .nav { padding: 14px 18px !important; display: flex !important; align-items: center !important; gap: 12px !important; flex-wrap: nowrap !important; }
+      .site-header .nav-links, .site-header .nav-cta { display: none !important; }
+      .site-header .brand-name { font-size: 0.95rem !important; }
+      .site-header .brand-name small { display: none !important; }
+      .site-header .brand-mark { width: 28px !important; height: 28px !important; font-size: 0.85rem !important; }
+
+      .mobile-menu-toggle { display: inline-flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; gap: 5px !important; width: 36px !important; height: 36px !important; background: transparent !important; border: 0 !important; cursor: pointer !important; padding: 0 !important; z-index: 60 !important; position: relative !important; }
+      .mobile-menu-toggle span { display: block !important; width: 22px !important; height: 1.5px !important; background: var(--navy) !important; transition: transform 0.25s ease, opacity 0.25s ease !important; }
+      body.drawer-open .mobile-menu-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg) !important; }
+      body.drawer-open .mobile-menu-toggle span:nth-child(2) { opacity: 0 !important; }
+      body.drawer-open .mobile-menu-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg) !important; }
+
+      .mobile-drawer { display: block !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 85vw !important; max-width: 360px !important; height: 100vh !important; background: var(--navy) !important; color: #fff !important; z-index: 100 !important; transform: translateX(-100%) !important; transition: transform 0.3s ease !important; overflow-y: auto !important; padding: 28px 28px !important; box-sizing: border-box !important; }
+      body.drawer-open .mobile-drawer { transform: translateX(0) !important; }
+      body.drawer-open { overflow: hidden !important; }
+
+      .mobile-drawer-eyebrow { font-family: 'Inter', sans-serif !important; color: var(--gold) !important; font-size: 0.7rem !important; font-weight: 600 !important; letter-spacing: 0.22em !important; margin-top: 8px !important; margin-bottom: 28px !important; }
+      .mobile-drawer-nav { display: flex !important; flex-direction: column !important; gap: 0 !important; }
+      .mobile-drawer-nav a { color: #fff !important; text-decoration: none !important; font-family: 'Cormorant Garamond', Georgia, serif !important; font-size: 1.4rem !important; font-weight: 500 !important; padding: 14px 0 !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; min-height: 44px !important; }
+      .mobile-drawer-nav a.cta { color: var(--gold) !important; font-style: italic !important; font-size: 1rem !important; padding-top: 28px !important; border-bottom: 0 !important; font-family: 'Inter', sans-serif !important; font-style: normal !important; letter-spacing: 0.08em !important; text-transform: none !important; }
+      .mobile-drawer-footer { margin-top: 36px !important; padding-top: 24px !important; border-top: 1px solid rgba(255,255,255,0.08) !important; color: rgba(255,255,255,0.5) !important; font-size: 0.7rem !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; font-family: 'Inter', sans-serif !important; }
+
+      .mobile-drawer-backdrop { display: block !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100vw !important; height: 100vh !important; background: rgba(11,28,55,0.55) !important; z-index: 99 !important; opacity: 0 !important; pointer-events: none !important; transition: opacity 0.25s ease !important; }
+      body.drawer-open .mobile-drawer-backdrop { opacity: 1 !important; pointer-events: auto !important; }
+    
     }
     /* ========== END MOBILE FIXES ========== */
   </style>
@@ -273,6 +301,7 @@
 
   <header class="site-header">
     <div class="nav">
+      <button class="mobile-menu-toggle" aria-label="Open menu" onclick="document.body.classList.toggle('drawer-open')"><span></span><span></span><span></span></button>
       <a class="brand" href="index.html">
         <span class="brand-mark">N</span>
         <span class="brand-name">Nevada Tax Group<small>Pre-Transaction Strategy · Exit Planning</small></span>
@@ -288,6 +317,21 @@
       <a href="contact.html" class="nav-cta">Request an Introduction</a>
     </div>
   </header>
+
+  <aside class="mobile-drawer" aria-label="Mobile navigation">
+    <div class="mobile-drawer-eyebrow">— MENU</div>
+    <nav class="mobile-drawer-nav">
+      <a href="index.html" onclick="document.body.classList.remove('drawer-open')">Home</a>
+      <a href="practice.html" onclick="document.body.classList.remove('drawer-open')">What We Do</a>
+      <a href="about.html" onclick="document.body.classList.remove('drawer-open')">Who We Serve</a>
+      <a href="insights.html" onclick="document.body.classList.remove('drawer-open')">Insights</a>
+      <a href="team.html" onclick="document.body.classList.remove('drawer-open')">Team</a>
+      <a href="referrals.html" onclick="document.body.classList.remove('drawer-open')">Referrals</a>
+      <a href="contact.html" class="cta" onclick="document.body.classList.remove('drawer-open')">Request an Introduction &rarr;</a>
+    </nav>
+    <div class="mobile-drawer-footer">Las Vegas &middot; By Appointment</div>
+  </aside>
+  <div class="mobile-drawer-backdrop" onclick="document.body.classList.remove('drawer-open')" aria-hidden="true"></div>
 
   <section class="page-head">
     <div class="page-head-image" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');"></div>
@@ -405,5 +449,6 @@
     </div>
   </footer>
 
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape')document.body.classList.remove('drawer-open')});</script>
 </body>
 </html>
