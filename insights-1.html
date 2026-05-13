@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=93" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=94" />
   <style>
     /* Drawer infrastructure — hidden by default on desktop */
     .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
@@ -263,6 +263,13 @@
     
     }
     /* ========== END MOBILE FIXES ========== */
+    /* DESKTOP: sticky header + nav-cta clickable hover */
+    @media (min-width: 769px) {
+      .site-header { position: sticky !important; top: 0 !important; z-index: 50 !important; background: var(--cream) !important; transition: box-shadow 0.25s ease !important; }
+      .site-header.scrolled { box-shadow: 0 2px 16px rgba(11,28,55,0.08) !important; }
+      .nav-cta { transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease !important; }
+      .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
+    }
   </style>
 </head>
 <body>
@@ -444,5 +451,6 @@
   </footer>
 
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape')document.body.classList.remove('drawer-open')});</script>
+<script>window.addEventListener('scroll',function(){var h=document.querySelector('.site-header');if(h)h.classList.toggle('scrolled',window.scrollY>80)});</script>
 </body>
 </html>

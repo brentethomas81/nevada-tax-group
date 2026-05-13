@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=93" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=94" />
   <style>
     /* Drawer infrastructure — hidden by default on desktop */
     .mobile-menu-toggle, .mobile-drawer, .mobile-drawer-backdrop { display: none; }
@@ -273,11 +273,24 @@
       body.home .hero .eyebrow { font-size: 0.7rem !important; margin-bottom: 14px !important; }
       body.home .hero-inner { padding: 32px 20px 40px !important; justify-content: flex-end !important; }
       body.home .hero .btn { padding: 14px 24px !important; font-size: 0.78rem !important; min-height: 48px !important; letter-spacing: 0.14em !important; }
+      /* HOME MOBILE: text vertically centered, Request Introduction button shown */
+      body.home .hero { min-height: 78vh !important; }
+      body.home .hero-inner { padding: 32px 22px !important; justify-content: center !important; }
+      body.home .hero h1 { margin-bottom: 22px !important; }
+      body.home .hero .btn { display: inline-flex !important; align-items: center !important; justify-content: center !important; align-self: flex-start !important; background: var(--gold) !important; color: var(--navy) !important; border: 0 !important; padding: 14px 26px !important; font-size: 0.78rem !important; font-weight: 600 !important; letter-spacing: 0.14em !important; text-transform: uppercase !important; min-height: 48px !important; margin-top: 6px !important; border-radius: 2px !important; text-decoration: none !important; }
+    
     
     
     
     }
     /* ========== END MOBILE FIXES ========== */
+    /* DESKTOP: sticky header + nav-cta clickable hover */
+    @media (min-width: 769px) {
+      .site-header { position: sticky !important; top: 0 !important; z-index: 50 !important; background: var(--cream) !important; transition: box-shadow 0.25s ease !important; }
+      .site-header.scrolled { box-shadow: 0 2px 16px rgba(11,28,55,0.08) !important; }
+      .nav-cta { transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease !important; }
+      .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; border-color: var(--gold) !important; }
+    }
   </style>
 </head>
 <body class="home">
@@ -432,5 +445,6 @@
   </footer>
 
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape')document.body.classList.remove('drawer-open')});</script>
+<script>window.addEventListener('scroll',function(){var h=document.querySelector('.site-header');if(h)h.classList.toggle('scrolled',window.scrollY>80)});</script>
 </body>
 </html>
